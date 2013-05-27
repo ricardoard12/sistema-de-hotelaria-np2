@@ -1,4 +1,4 @@
-package hotel.entidade;
+package hotel.entidades;
 
 import java.io.Serializable;
 import javax.persistence.*;

@@ -1,8 +1,8 @@
-package hotel.forms;
+package hotel.formularios;
 
 import java.util.Date;
 
-import hotel.entidade.Usuario;
+import hotel.entidades.Usuario;
 import hotel.persistencia.UsuarioDao;
 
 public class Main {
