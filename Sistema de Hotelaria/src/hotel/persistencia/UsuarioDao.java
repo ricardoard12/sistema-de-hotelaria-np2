@@ -1,6 +1,6 @@
 package hotel.persistencia;
 
-import hotel.entidade.Usuario;
+import hotel.entidades.Usuario;
 
 import javax.persistence.EntityManager;
 

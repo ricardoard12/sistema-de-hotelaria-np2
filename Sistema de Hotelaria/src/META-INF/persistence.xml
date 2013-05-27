@@ -3,11 +3,11 @@
 	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 	<persistence-unit name="Sistema de Hotelaria" transaction-type="RESOURCE_LOCAL">
-		<class>hotel.entidade.Aluguel</class>
-		<class>hotel.entidade.Consumo</class>
-		<class>hotel.entidade.Produto</class>
-		<class>hotel.entidade.Quarto</class>
-		<class>hotel.entidade.Usuario</class>
+		<class>hotel.entidades.Aluguel</class>
+		<class>hotel.entidades.Consumo</class>
+		<class>hotel.entidades.Produto</class>
+		<class>hotel.entidades.Quarto</class>
+		<class>hotel.entidades.Usuario</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hotel" />
 			<property name="javax.persistence.jdbc.user" value="root" />
