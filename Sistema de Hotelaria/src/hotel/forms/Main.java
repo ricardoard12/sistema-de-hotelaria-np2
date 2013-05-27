@@ -16,7 +16,7 @@ public class Main {
 		usuario.setSenha("valms");
 		usuario.setNome("Valdenia Junior");
 
-		uDao.inserirUsuario(usuario);
+		uDao.insertNewUser(usuario);
 	}
 
 }
