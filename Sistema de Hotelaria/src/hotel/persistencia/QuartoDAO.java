@@ -1,7 +1,8 @@
 package hotel.persistencia;
 
 import hotel.entidades.Quarto;
-import hotel.persistencia.JPAResourceBean;
+
+import java.util.List;
 
 import javax.persistence.EntityManager;
 
@@ -46,8 +47,8 @@ public class QuartoDAO {
 		try {
 			em.getTransaction().begin();
 			
-			Quarto u = em.find(Quarto.class, codigo);
-			em.remove(u);
+			Quarto q = em.find(Quarto.class, codigo);
+			em.remove(q);
 			
 			em.getTransaction().commit();
 		} catch(RuntimeException e) {
@@ -60,5 +61,11 @@ public class QuartoDAO {
 	public Quarto buscar(int codigo) {
 		EntityManager em = JPAResourceBean.getEntityManager();
 		return em.find(Quarto.class, codigo);
+	}
+	
+	public List<Quarto> listar() {
+		EntityManager em = JPAResourceBean.getEntityManager();
+		
+		return em.createQuery("select q from Quarto q").getResultList();
 	}
 }

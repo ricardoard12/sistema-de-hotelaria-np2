@@ -1,5 +1,7 @@
 package hotel.persistencia;
 
+import java.util.List;
+
 import hotel.entidades.Usuario;
 
 import javax.persistence.EntityManager;
@@ -28,6 +30,7 @@ public class UsuarioDao {
 
 			Usuario oldUserData = em.find(Usuario.class,
 					novoDadoUsuario.getIdUsuario());
+			oldUserData.setPerfil(novoDadoUsuario.getPerfil());
 			oldUserData.setNome(novoDadoUsuario.getNome());
 			oldUserData.setLogin(novoDadoUsuario.getLogin());
 			oldUserData.setSenha(novoDadoUsuario.getSenha());
@@ -61,6 +64,12 @@ public class UsuarioDao {
 	public Usuario buscar(int codigo) {
 		EntityManager em = JPAResourceBean.getEntityManager();
 		return em.find(Usuario.class, codigo);
+	}
+	
+	public List<Usuario> listar() {
+		EntityManager em = JPAResourceBean.getEntityManager();
+		
+		return em.createQuery("select u from Usuario u").getResultList();
 	}
 
 }
