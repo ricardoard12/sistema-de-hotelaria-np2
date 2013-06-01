@@ -29,6 +29,9 @@ public class UsuarioDao {
 			Usuario oldUserData = em.find(Usuario.class,
 					novoDadoUsuario.getIdUsuario());
 			oldUserData.setNome(novoDadoUsuario.getNome());
+			oldUserData.setLogin(novoDadoUsuario.getLogin());
+			oldUserData.setSenha(novoDadoUsuario.getSenha());
+			oldUserData.setDataNascimento(novoDadoUsuario.getDataNascimento());
 
 			em.getTransaction().commit();
 		} catch (RuntimeException e) {
