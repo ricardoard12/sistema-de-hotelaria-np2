@@ -6,12 +6,12 @@ import javax.persistence.EntityManager;
 
 public class UsuarioDao {
 
-	public void insertNewUser(Usuario u) {
+	public void insertNovoUsuario(Usuario novoUsuario) {
 		EntityManager entityManager = JPAResourceBean.getEntityManager();
 
 		try {
 			entityManager.getTransaction().begin();
-			entityManager.persist(u);
+			entityManager.persist(novoUsuario);
 			entityManager.getTransaction().commit();
 		} catch (RuntimeException e) {
 			entityManager.getTransaction().rollback();
@@ -20,15 +20,15 @@ public class UsuarioDao {
 		}
 	}
 
-	public void updateUser(Usuario newUserData) {
+	public void atualizarUsuario(Usuario novoDadoUsuario) {
 		EntityManager em = JPAResourceBean.getEntityManager();
 
 		try {
 			em.getTransaction().begin();
 
 			Usuario oldUserData = em.find(Usuario.class,
-					newUserData.getIdUsuario());
-			oldUserData.setNome(newUserData.getNome());
+					novoDadoUsuario.getIdUsuario());
+			oldUserData.setNome(novoDadoUsuario.getNome());
 
 			em.getTransaction().commit();
 		} catch (RuntimeException e) {
