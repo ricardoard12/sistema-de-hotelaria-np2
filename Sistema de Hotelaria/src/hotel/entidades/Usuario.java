@@ -18,7 +18,7 @@ public class Usuario implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int idUsuario;
 
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	@Column(name="data_nascimento")
 	private Date dataNascimento;
 
