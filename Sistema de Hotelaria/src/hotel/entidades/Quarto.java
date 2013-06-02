@@ -31,6 +31,7 @@ public class Quarto implements Serializable {
 	private List<Aluguel> alugueis;
 
 	public Quarto() {
+		this.status= "desocupado";
 	}
 
 	public int getIdQuarto() {
