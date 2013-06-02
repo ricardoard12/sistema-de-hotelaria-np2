@@ -5,5 +5,26 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
     version="2.1">
+	<navigation-rule>
+		<display-name>login</display-name>
+		<from-view-id>/login.xhtml</from-view-id>
+		<navigation-case>
+			<to-view-id>/funcionario.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>login</display-name>
+		<from-view-id>/login.xhtml</from-view-id>
+		<navigation-case>
+			<to-view-id>/cliente.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>login</display-name>
+		<from-view-id>/login.xhtml</from-view-id>
+		<navigation-case>
+			<to-view-id>/erro.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 
 </faces-config>

@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13701222871360" configfile="/Sistema de Hotelaria/WebContent/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13701222871360" configfile="/Sistema de Hotelaria/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="login" x="80" y="84" id="pf13701367391841" outlinks="pf13701367391842 pf13701367392003 pf13701367392004" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="funcionario" x="360" y="12" id="pf13701367392005" inlinks="pf13701367391842" path="/funcionario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="cliente" x="367" y="96" id="pf13701367392006" inlinks="pf13701367392003" path="/cliente.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="erro" x="367" y="192" id="pf13701367392007" inlinks="pf13701367392004" path="/erro.xhtml"/>
+  <links id="pf13701367391842" target="pf13701367392005" source="pf13701367391841"/>
+  <links id="pf13701367392003" target="pf13701367392006" source="pf13701367391841"/>
+  <links id="pf13701367392004" target="pf13701367392007" source="pf13701367391841"/>
+</pageflow:Pageflow>
