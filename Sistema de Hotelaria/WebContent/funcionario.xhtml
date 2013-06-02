@@ -8,6 +8,21 @@
 <title>Funcionario</title>
 </head>
 <body>
-Bem vindo, <h:outputText value="#{usuarioForm.usuario.nome}"></h:outputText>!
+	<h:outputText value="Bem vindo, #{usuarioForm.usuario.login}!"></h:outputText>
+
+	<ul>
+		<li><h:link outcome="cadastrarClientes">Cadastrar clientes</h:link>
+		</li>
+		<li><h:link outcome="cadastrarQuartos">Cadastrar quartos</h:link></li>
+		<li><h:link outcome="">Efetuar aluguel de quarto a cliente</h:link></li>
+<!-- 		//TODO -->
+		<li><h:link outcome="">Finalizar conta</h:link></li>
+<!-- 		//TODO -->
+		<li><h:link outcome="">Visualizar quartos alugados e disponíveis e seus detalhes</h:link>
+<!-- 		//TODO -->
+		</li>
+		<li><h:link outcome="">Realizar logout</h:link></li>
+<!-- 		//TODO -->
+	</ul>
 </body>
 </html>
