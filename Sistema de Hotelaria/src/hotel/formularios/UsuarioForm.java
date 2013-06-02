@@ -10,7 +10,7 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
 
 @ManagedBean
-@ViewScoped
+@RequestScoped
 public class UsuarioForm {
 	private Usuario usuario = new Usuario();
 
@@ -43,5 +43,6 @@ public class UsuarioForm {
 		UsuarioDao uDao = new UsuarioDao();
 		uDao.insertNovoUsuario(usuario);
 		return "sucesso";
+		//TODO resolver o que fazer com o retorno. To pensando em voltar para a tela funcionario.xhtml
 	}
 }
