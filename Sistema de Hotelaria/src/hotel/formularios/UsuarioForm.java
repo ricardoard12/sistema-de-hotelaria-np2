@@ -42,7 +42,7 @@ public class UsuarioForm {
 	public String inserir() {
 		UsuarioDao uDao = new UsuarioDao();
 		uDao.insertNovoUsuario(usuario);
-		return "sucesso";
+		return "funcionario";
 		//TODO resolver o que fazer com o retorno. To pensando em voltar para a tela funcionario.xhtml
 	}
 }
