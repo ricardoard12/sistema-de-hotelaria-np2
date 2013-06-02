@@ -18,11 +18,11 @@ public class Aluguel implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int idAluguel;
 
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	@Column(name="data_entrada")
 	private Date dataEntrada;
 
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	@Column(name="data_saida")
 	private Date dataSaida;
 

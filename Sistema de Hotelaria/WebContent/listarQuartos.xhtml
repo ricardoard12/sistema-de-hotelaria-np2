@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Listar quartos</title>
+</head>
+<body>
+	<h2>Lista de quartos</h2>
+
+	<h:dataTable value="#{quartoForm.quartos}" var="quarto">
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="idQuarto"></h:outputText>
+			</f:facet>
+
+			<h:outputText value="#{quarto.idQuarto}" style="color: blue;"
+				rendered="#{quarto.status == 'ocupado'}">				
+			</h:outputText>
+			
+			<h:outputText value="#{quarto.idQuarto}" style="color: green;"
+				rendered="#{quarto.status == 'desocupado'}"></h:outputText>
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Numero"></h:outputText>
+			</f:facet>
+			<h:outputText value="#{quarto.numero}" style="color: blue;"
+				rendered="#{quarto.status == 'ocupado'}"></h:outputText>
+			<h:outputText value="#{quarto.numero}" style="color: green;"
+				rendered="#{quarto.status == 'desocupado'}"></h:outputText>
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Capacidade"></h:outputText>
+			</f:facet>
+			<h:outputText value="#{quarto.capacidade}" style="color: blue;"
+				rendered="#{quarto.status == 'ocupado'}"></h:outputText>
+			<h:outputText value="#{quarto.capacidade}" style="color: green;"
+				rendered="#{quarto.status == 'desocupado'}"></h:outputText>
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Valor da diaria"></h:outputText>
+			</f:facet>
+			<h:outputText value="#{quarto.valorDiaria}" style="color: blue;"
+				rendered="#{quarto.status == 'ocupado'}">
+				<f:convertNumber type="currency" currencyCode="BRL"></f:convertNumber>
+			</h:outputText>
+			<h:outputText value="#{quarto.valorDiaria}" style="color: green;"
+				rendered="#{quarto.status == 'desocupado'}">
+				<f:convertNumber type="currency" currencyCode="BRL"></f:convertNumber>
+			</h:outputText>
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Status"></h:outputText>
+			</f:facet>
+<!-- 			consertar o commandLink inserindo uma action ou refazer a listarQuartos.xhtml-->
+			<h:commandLink ><h:outputText value="#{quarto.status}" style="color: blue;"
+				rendered="#{quarto.status == 'ocupado'}"></h:outputText></h:commandLink>
+			<h:outputText value="#{quarto.status}" style="color: green;"
+				rendered="#{quarto.status == 'desocupado'}"></h:outputText>
+		</h:column>
+	</h:dataTable>
+
+</body>
+</html>

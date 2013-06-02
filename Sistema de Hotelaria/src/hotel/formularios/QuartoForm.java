@@ -1,5 +1,7 @@
 package hotel.formularios;
 
+import java.util.List;
+
 import hotel.entidades.Quarto;
 import hotel.persistencia.QuartoDAO;
 
@@ -22,7 +24,12 @@ public class QuartoForm {
 	public String inserir(){
 		QuartoDAO qDao = new QuartoDAO();
 		qDao.inserir(quarto);
-		return "sucesso";
+		return "funcionario";
 		//TODO resolver o que fazer com o retorno. To pensando em voltar para a tela funcionario.xhtml
+	}
+	
+	public List<Quarto> getQuartos(){
+		QuartoDAO qDao = new QuartoDAO();
+		return qDao.listar();		
 	}
 }
