@@ -11,8 +11,11 @@
 
 <h:form id="cliente">
 		<h:panelGrid columns="2">
-			<h:outputText value="Perfil:"></h:outputText>
-			<h:inputText id="perfil" value="#{usuarioForm.usuario.perfil}"></h:inputText>			
+			<h:outputText value="Pefil:"></h:outputText>
+			<h:selectOneMenu id="perfil" value="#{usuarioForm.usuario.perfil}">
+				<f:selectItem itemLabel="Cliente" itemValue="cliente"></f:selectItem>
+				<f:selectItem itemLabel="Funcionario" itemValue="funcionario"></f:selectItem>
+			</h:selectOneMenu>			
 			
 			<h:outputText value="Nome:"></h:outputText>			
 			<h:inputText id="nome" value="#{usuarioForm.usuario.nome}"></h:inputText>
