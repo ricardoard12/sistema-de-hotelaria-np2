@@ -64,8 +64,12 @@ public class QuartoDAO {
 	}
 	
 	public List<Quarto> listar() {
-		EntityManager em = JPAResourceBean.getEntityManager();
-		
+		EntityManager em = JPAResourceBean.getEntityManager();		
 		return em.createQuery("select q from Quarto q").getResultList();
+	}
+	
+	public List<Quarto> listarDesocupados() {
+		EntityManager em = JPAResourceBean.getEntityManager();		
+		return em.createQuery("select q from Quarto q where q.status = 'desocupado'").getResultList();
 	}
 }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Aluguel de quarto</title>
+</head>
+<body>
+
+	<h2>Alugar quarto</h2>
+	<h:form id="alugarQuarto">
+		<h:panelGrid columns="2">
+			<h:outputText value="Quantidade de pessoas:"></h:outputText>
+			<h:inputText id="qtdPessoas"
+				value="#{aluguelForm.aluguel.qtdPessoas}"></h:inputText>
+
+			<h:outputText value="Data entrada (dd/mm/aaaa):"></h:outputText>
+			<h:inputText id="dataEntrada"
+				value="#{aluguelForm.aluguel.dataEntrada}">
+				<f:convertDateTime timeZone="GMT-3" pattern="dd/MM/yyyy"></f:convertDateTime>
+			</h:inputText>
+
+			<h:outputText value="Data saida (dd/mm/aaaa):"></h:outputText>
+			<h:inputText id="dataSaida" value="#{aluguelForm.aluguel.dataSaida}">
+				<f:convertDateTime timeZone="GMT-3" pattern="dd/MM/yyyy"></f:convertDateTime>
+			</h:inputText>
+
+			<h:outputText value="Cliente:"></h:outputText>
+			<h:selectOneMenu id="cliente"
+				value="#{aluguelForm.aluguel.usuario}">
+				<f:selectItems value="#{aluguelForm.usuarios}" var="usu"
+					itemLabel="#{usu.nome}" itemValue="#{usu.idUsuario}"></f:selectItems>
+			</h:selectOneMenu>
+
+			<h:outputText value="Quarto:"></h:outputText>
+			<h:selectOneMenu id="quarto"
+				value="#{aluguelForm.aluguel.quarto}">
+				<f:selectItems value="#{aluguelForm.quartosDesocupados}" var="q"
+					itemLabel="No:[ #{q.numero}] - #{q.capacidade} pessoas | Diaria(R$): #{q.valorDiaria}"
+					itemValue="#{q.idQuarto}">					
+				</f:selectItems>
+			</h:selectOneMenu>
+
+
+			<h:commandButton value="Enviar" action="#{aluguelForm.inserir}"></h:commandButton>
+		</h:panelGrid>
+	</h:form>
+
+</body>
+</html>
