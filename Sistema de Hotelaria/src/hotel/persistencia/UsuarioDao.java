@@ -61,15 +61,21 @@ public class UsuarioDao {
 		}
 	}
 
+	// Metodo de busca em.find(class, primary key);
 	public Usuario buscar(int codigo) {
 		EntityManager em = JPAResourceBean.getEntityManager();
 		return em.find(Usuario.class, codigo);
 	}
-	
+
 	public List<Usuario> listar() {
 		EntityManager em = JPAResourceBean.getEntityManager();
-		
 		return em.createQuery("select u from Usuario u").getResultList();
+	}
+	
+	//Teoricamente este metodo busca no BD pelo login e senha
+	public List<Usuario> findByLoginSenha(String login, String senha) {
+		EntityManager em = JPAResourceBean.getEntityManager();
+		return em.createQuery("select u.login, u.senha from Usuario u where u.login = :login and u.senha = :senha ").getResultList();
 	}
 
 }
